@@ -3,7 +3,7 @@ import {FastifyRequest, FastifyReply} from "fastify";
 import { CreateCustomersService } from "../services/createCustomersService";
 
 class CreateCustomersController{
-    async handle(request: FastifyRequest, replay: FastifyReply){
+    async handle(request: FastifyRequest, reply: FastifyReply){
         const {name, email} = request.body as {name: string, email:string};
 
         console.log(name);
@@ -13,7 +13,7 @@ class CreateCustomersController{
 
         const customer = await customersService.execute({name, email});
 
-        replay.send(customer)
+        reply.send(customer)
 
     }
 }
