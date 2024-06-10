@@ -12,7 +12,7 @@ export async function routes(fastify:FastifyInstance, options: FastifyPluginOpti
 
     })
 
-    fastify.get("/costumers", async (request: FastifyRequest, reply: FastifyReply) => {
+    fastify.get("/customers", async (request: FastifyRequest, reply: FastifyReply) => {
         return new ListCustomersController().handle(request, reply)
     })
 }
